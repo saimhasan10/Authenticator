@@ -1,0 +1,75 @@
+<nav class="flex items-center justify-between flex-wrap bg-gray-100 p-6 px-10">
+  <div class="flex items-center flex-shrink-0 text-blue-900 mr-6">
+    <span class="font-bold text-xl tracking-tight">
+      <a href="/">Authenticator</a>
+    </span>
+  </div>
+
+  <!-- Mobile menu button -->
+  <div class="block lg:hidden">
+    <button
+      class="flex items-center px-3 py-2 border rounded text-white border-white-400 hover:text-white hover:border-white"
+      id="menu-toggle"
+    >
+      <svg
+        class="fill-current h-3 w-3"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Links container (hidden on mobile by default) -->
+  <div
+    class="w-full block flex-grow lg:flex lg:items-center lg:w-auto px-10"
+    id="menu"
+  >
+    {% if request.user.is_authenticated %}
+    <div class="text-md lg:flex-grow"></div>
+    <div class="flex items-center">
+      <div class="text-blue-900 my-auto font-black px-5">
+        Welcome, {{ request.user }}
+      </div>
+
+      <a
+        href="{% url 'profile' %}"
+        class="mx-2 inline-block font-medium text-sm px-4 py-2 leading-none bg-blue-900 rounded text-white border-white hover:border-transparent hover:text-dark hover:bg-red-700 mt-4 lg:mt-0"
+        >Profile</a
+      >
+      <a
+        href="{% url 'logout' %}"
+        class="mx-2 inline-block font-medium text-sm px-4 py-2 leading-none bg-blue-900 rounded text-white border-white hover:border-transparent hover:text-dark hover:bg-red-700 mt-4 lg:mt-0"
+        >Logout</a
+      >
+    </div>
+    {% else %}
+    <div class="text-md lg:flex-grow"></div>
+    <div class="flex items-center">
+      <a
+        href="{% url 'login' %}"
+        class="mr-2 inline-block font-medium text-sm px-4 py-2 leading-none bg-blue-900 rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0"
+        >Login</a
+      >
+      <a
+        href="{% url 'register' %}"
+        class="inline-block font-medium text-sm px-4 py-2 leading-none bg-blue-900 rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0"
+        >Register</a
+      >
+    </div>
+    {% endif %}
+  </div>
+</nav>
+
+<!-- Tailwind CSS for handling the mobile menu -->
+<script>
+  // Mobile menu toggle function
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>

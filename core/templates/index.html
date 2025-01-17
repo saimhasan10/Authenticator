@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<style>
+  /* Tailwind's @layer directive is used to extend custom CSS */
+  @layer utilities {
+    .path-animation {
+      animation: drawPath 3s ease-in-out forwards;
+    }
+
+    /* Define the keyframe animation */
+    @keyframes drawPath {
+      0% {
+        stroke-dasharray: 0, 100;
+        stroke-dashoffset: 0;
+      }
+      100% {
+        stroke-dasharray: 100, 0;
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+</style>
+
+<div
+  class="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8"
+>
+  <!-- Wrapper for both sections -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full items-center"
+  >
+    <!-- Text and Login Button -->
+    <div class="text-left relative">
+      <h1
+        class="font-semibold text-gray-800 text-4xl sm:text-5xl lg:text-6xl mb-4"
+      >
+        Welcome to
+        <span class="relative inline-block font-bold text-red-500">
+          Authenticator
+        </span>
+        <div class="relative">
+          <svg
+            class="w-11/12 md:w-10/12 h-4 md:h-5 path-animation absolute bottom-0 left-0"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 80 10"
+            preserveaspectratio="none"
+          >
+            <!-- Adjusted Bezier curve for more curvature and no space -->
+            <path
+              d="M 0 30 C 20 0, 80 10, 100 20"
+              fill="transparent"
+              stroke="#3E5879"
+              stroke-width=".5rem"
+            />
+          </svg>
+        </div>
+      </h1>
+      <!-- Static curved underline under Authenticator with a more pronounced curve -->
+
+      <p class="text-gray-800 text-lg sm:text-xl mb-6">
+        Log in to access your account and explore available features.
+      </p>
+      <a
+        href="{% url 'login' %}"
+        class="bg-red-500 text-white font-bold py-2 px-4 sm:px-6 rounded hover:bg-red-600"
+      >
+        Login
+      </a>
+    </div>
+
+    <!-- Image Section -->
+    <div class="flex justify-center">
+      <img
+        src="{% static './images/authentication.jpg' %}"
+        alt="Authentication image"
+        class="max-w h-auto rounded-lg ml-5"
+      />
+    </div>
+  </div>
+</div>
+
+{% endblock %}
