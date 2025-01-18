@@ -22,7 +22,7 @@ Use the following credentials to log in and explore the database to view the ava
 
 ## 👨‍💻 Demo User Profile look like
 
-- **DB profile**: [Click_Here]()
+- **DB profile**: [Click_Here](https://github.com/saimhasan10/Authenticator/blob/main/Assets/demo_profile.png)
 
 ---
 
