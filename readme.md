@@ -11,7 +11,14 @@ A Django-based project for user authentication where the database is db.sqlite3,
 
 ---
 
-## 👨‍💻 Demo User Profile look like
+## 👨‍💻 Demo login profile credentials of database
+
+- **username**: `demo`
+- **password**: `abcd112233`
+
+---
+
+## 👨‍💻 Demo User Profile look like inside the database
 
 - **DB profile**: [Click_Here](https://github.com/saimhasan10/Authenticator/blob/main/Assets/demo_profile.png)
 
