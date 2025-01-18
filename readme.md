@@ -11,13 +11,6 @@ A Django-based project for user authentication where the database is db.sqlite3,
 
 ---
 
-## 👨‍💻 Demo login profile credentials of database
-
-- **username**: `demo`
-- **password**: `abcd112233`
-
----
-
 ## 👨‍💻 Demo User Profile look like inside the database
 
 - **DB profile**: [Click_Here](https://github.com/saimhasan10/Authenticator/blob/main/Assets/demo_profile.png)
@@ -42,5 +35,14 @@ A Django-based project for user authentication where the database is db.sqlite3,
 
 4. **Real-Time Updates**:
    - Any changes to user information are instantly reflected.
+
+---
+
+## 🛑 Limitations
+
+**Ephemeral Storage**:
+
+- Hosting platforms like Render use temporary storage, causing the SQLite database
+  (db.sqlite3) to reset on server restarts, code redeployments, or scaling down of idle services.
 
 ---
