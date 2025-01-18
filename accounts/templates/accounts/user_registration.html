@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+<!--  -->
+{% block head_title %}Register{% endblock %}
+<!--  -->
+{% block content %}
 
 <!-- non field error -->
 {% if form.non_field_errors %} {% for error in form.non_field_errors %}

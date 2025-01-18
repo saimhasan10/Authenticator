@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% block content %} {% if form.non_field_errors %}
+{% extends 'base.html' %}
+<!--  -->
+{% block head_title %}Login{% endblock %}
+<!--  -->
+{% block content %} {% if form.non_field_errors %}
 <!-- error message -->
 {% for error in form.non_field_errors %}
 <div
