@@ -6,7 +6,7 @@ A Django-based project for user authentication where the database is db.sqlite3,
 
 ## 🚀 Live Links
 
-- **Live Site(can take 50+ seconds to load due to free host service) **: [Click_Here](https://simple-authenticator.onrender.com)
+- **Live Site(can take 50+ seconds to load due to free host service)**: [Click_Here](https://simple-authenticator.onrender.com)
 - **Live Database**: [Click_Here](https://simple-authenticator.onrender.com/admin/login/?next=/admin/)
 
 ---
